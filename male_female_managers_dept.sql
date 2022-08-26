@@ -1,3 +1,5 @@
+-- Query to gather the gender of the manages by department and year.
+
 SELECT 
     d.dept_name,
     ee.gender,
@@ -8,7 +10,7 @@ SELECT
     CASE
         WHEN
             e.calendar_year <= YEAR(dm.to_date)
-                AND e.calendar_year >= YEAR(dm.from_date)
+                AND e.calendar_year >= YEAR(dm.from_date) -- to ensure these were the active years as manager
         THEN
             1
         ELSE 0
